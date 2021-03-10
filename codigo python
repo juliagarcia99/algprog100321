@@ -1,0 +1,37 @@
+produtos = ['cebola', 'alho', 'pimenta']
+precoProdutos = [1.29, 3.00, 2.99]
+qtdProdutos = [12, 9, 14]
+
+
+def imprimirProduto():
+    infoProd = str(input('Insira um produto:'))
+    escolha =(produtos.index(infoProd))
+    print('produto:')
+    print(produtos[escolha])
+    print('\n valor:')
+    print(precoProdutos[escolha])
+    print('\n quantidade em estoque:')
+    print(qtdProdutos[escolha])
+
+def removerProduto():
+    delProd = str(input('Produto a ser removido:'))
+    posicao = produtos.index(delProd)
+    produtos.pop(posicao)
+    precoProdutos.pop(posicao)
+    qtdProdutos.pop(posicao)
+
+def listarProdutos():
+    print('produtos:')
+    print(produtos)
+
+
+
+while True:
+    menu = input("Ação: \n 1- Listar produtos \n 2- Informaçoes de um produto \n 3- Remover produto")
+
+    if menu == '1':
+        listarProdutos()
+    elif menu == '2':
+        imprimirProduto()
+    elif menu == '3':
+        removerProduto()
